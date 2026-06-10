@@ -12,6 +12,10 @@ The architecture is designed around one core principle:
 AI should not bypass enterprise data governance.
 AI should operate through governed data products, semantic views, approved tools, and validated context.
 ```
+## Architecture
+- Refer Enterprise banking data & AI platform architecture.png and enterprise-banking-data-ai-architecture.md
+
+
 
 ## Key Capabilities
 
