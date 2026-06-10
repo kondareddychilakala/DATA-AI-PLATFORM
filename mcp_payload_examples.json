@@ -1,0 +1,67 @@
+{
+  "router_payload_example": {
+    "prompt": "Show onboarding count this month and explain what onboarding means.",
+    "intent": "hybrid_customer_onboarding",
+    "entities": [
+      "customer",
+      "onboarding",
+      "current_month"
+    ],
+    "route": "hybrid",
+    "confidence": 0.91,
+    "required_tools": [
+      "run_governed_denodo_query",
+      "retrieve_document_context",
+      "validate_answer"
+    ],
+    "policy_checks": [
+      "pii_masking",
+      "metric_template_allowed",
+      "document_access_allowed"
+    ]
+  },
+  "governed_query_response_example": {
+    "rows": [
+      {
+        "customer_count": 1245,
+        "source_system": "core_banking",
+        "lineage_ref": "lineage.customer.gold.v1"
+      }
+    ],
+    "columns": [
+      "customer_count",
+      "source_system",
+      "lineage_ref"
+    ],
+    "answer_text": "Customer onboarding count for the selected period is 1,245.",
+    "governance_flags": [
+      "approved_metric",
+      "pii_safe",
+      "semantic_view_used"
+    ],
+    "lineage": [
+      "source",
+      "bronze",
+      "silver",
+      "gold",
+      "semantic_view"
+    ],
+    "confidence": 0.94,
+    "source": "denodo"
+  },
+  "document_rag_response_example": {
+    "chunks": [
+      {
+        "document_id": "policy_customer_onboarding",
+        "title": "Customer Onboarding Policy",
+        "chunk_id": "chunk_004",
+        "text": "Customer onboarding is the approved process of registering, validating, and activating a customer relationship.",
+        "classification": "internal",
+        "owner": "Customer Data Office"
+      }
+    ],
+    "confidence": 0.88,
+    "source": "document_rag"
+  }
+}
+
