@@ -1,4 +1,4 @@
-# Enterprise Banking Data AI Platform V2
+# Enterprise Banking Data AI Platform
 
 > A public-safe reference architecture for a governed banking Data + AI platform using lakehouse, semantic layer, MCP-style tool routing, and hybrid RAG.
 
